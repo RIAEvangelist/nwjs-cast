@@ -1,0 +1,29 @@
+{
+  "name": "nwjs-cast",
+  "version": "0.0.1",
+  "description": "chromecast integration for node, nw.js and node-webkit. Find and interact with all available chromecasts on the network.",
+  "main": "nwjs-cast.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chromecast",
+    "chrome",
+    "cast",
+    "nwjs",
+    "nw.js",
+    "node-webkit",
+    "node",
+    "webkit"
+  ],
+  "author": "Brandon Nozaki Miller",
+  "license": "DBAD",
+  "dependencies": {
+    "castv2-client": "0.0.8",
+    "mdns-js": "^0.2.9"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {}
+}

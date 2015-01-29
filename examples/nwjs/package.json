@@ -1,0 +1,15 @@
+{
+    "name"      : "node-webkit-chromecast-example",
+    "version"   : "0.0.1",
+    "main"      : "index.html",
+    "webkit": {
+		"plugin": true
+	},
+    "dependencies":{
+        "castv2":"latest",
+        "nwjs-cast":"latest"
+    },
+    "window":{
+        "toolbar":false   
+    }
+}
