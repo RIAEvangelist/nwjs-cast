@@ -19,7 +19,7 @@ function ChromecastManager(){
             {
                 /**
                  * Starts looking for chromecasts
-                 * @function
+                 * @method find
                  * @memberof ChromecastManager
                  * @param {function} callback - triggered each time a new chromecast device is found.
                  * @public 
@@ -29,7 +29,7 @@ function ChromecastManager(){
                 },
                 /**
                  * Stops looking for chromecasts
-                 * @function
+                 * @method stopFinding
                  * @memberof ChromecastManager
                  * @public 
                  */
@@ -38,7 +38,7 @@ function ChromecastManager(){
                 },
                 /**
                  * Object of found chromecast refrences by name
-                 * @type {Object}
+                 * @member {Object} devices found on the network
                  * @memberof ChromecastManager
                  * @public
                  */
@@ -114,12 +114,18 @@ function ChromecastManager(){
 
 /**
  * Class for Chromecast objects
- * @constructs Chromecast
+ * @class
+ * @constructs chromecast
  * @param   {Object}   data   network information
  * @returns {EventEmitter} chromecast object
  */
 function Chromecast(data) {
     
+    /**
+     * Chromecast Object
+     * @member {object} chromecast refrence to a chromecast found on the network
+     * @memberof Chromecast
+     */
     var chromecast = new EventEmitter();
     
     Object.defineProperties(
@@ -127,17 +133,17 @@ function Chromecast(data) {
         {
             /** 
              * chromecast name 
-             * @type {string} 
-             * @memberof Chromecast
+             * @member {string} name of the chromecast device
+             * @memberof chromecast
              * @public
              */
             name : {
                 value:data.txt[4].replace('fn=','')
             },
             /** 
-             * chromecast status object 
-             * @type {object}
-             * @memberof Chromecast
+             * chromecast session id
+             * @member {String} session id last used when connecting to chromecast
+             * @memberof chromecast
              * @public
              */
             session:{
@@ -146,15 +152,16 @@ function Chromecast(data) {
             },
             /** 
              * chromecast status object 
-             * @type {object}
-             * @memberof Chromecast
+             * @member {Object} status information about the chromecasts current status
+             * @memberof chromecast
              * @public
              */
             status:{
                 value:{
                     /**
                      * Request the chromecast status
-                     * @memberof Chromecast.status
+                     * @method get
+                     * @memberof chromecast.status
                      * @public
                      */
                     get:getStatus 
@@ -163,8 +170,8 @@ function Chromecast(data) {
             },
             /** 
              * chromecast ip
-             * @memberof Chromecast
-             * @type {string}
+             * @member {String} ip of this chromecast
+             * @memberof chromecast
              * @public
              */
             ip:{

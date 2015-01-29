@@ -23,7 +23,16 @@
     "mdns-js": "^0.2.9"
   },
   "directories": {
+    "doc": "docs",
     "example": "examples"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RIAEvangelist/nwjs-cast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RIAEvangelist/nwjs-cast/issues"
+  },
+  "homepage": "https://github.com/RIAEvangelist/nwjs-cast"
 }
