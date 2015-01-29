@@ -122,7 +122,6 @@ function Chromecast(data) {
     
     var chromecast = new EventEmitter();
     
-    
     Object.defineProperties(
         chromecast,
         {
