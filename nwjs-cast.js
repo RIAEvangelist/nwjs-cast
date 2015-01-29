@@ -5,34 +5,43 @@ var EventEmitter = require('events').EventEmitter;
 
 /**
  * Chromecast Manager.
- * Exposes find, stopFinding, and devices
  * @class ChromecastManager
- * @typedef {object} ChromecastManager
  */
 function ChromecastManager(){
-    this.find=findChromecasts;
-    this.stopFinding=stopFindingChromecasts;
+    
+    
     this.constructor=init;
     
-    /**
-     * Array of found chromecast refrences by ip
-     * @type {Object}
-     * @memberof ChromecastManager
-     * @public
-     */
-    this.devices={};
     
     function init(){
-        //lock scope vars
         Object.defineProperties(
             this,
             {
+                /**
+                 * Starts looking for chromecasts
+                 * @function
+                 * @memberof ChromecastManager
+                 * @param {function} callback - triggered each time a new chromecast device is found.
+                 * @public 
+                 */
                 find:{
                     value:findChromecasts
                 },
+                /**
+                 * Stops looking for chromecasts
+                 * @function
+                 * @memberof ChromecastManager
+                 * @public 
+                 */
                 stopFinding:{
                     value:stopFindingChromecasts
                 },
+                /**
+                 * Object of found chromecast refrences by name
+                 * @type {Object}
+                 * @memberof ChromecastManager
+                 * @public
+                 */
                 devices:{
                     value:{},
                     writeable:true
@@ -46,13 +55,6 @@ function ChromecastManager(){
     
     var browser=null;
     
-    /**
-     * Starts looking for chromecasts
-     * @function
-     * @memberof ChromecastManager
-     * @param {function} callback - triggered each time a new chromecast device is found.
-     * @public 
-     */
     function findChromecasts(callback) {
         if(!callback){
             throw('findChromecasts requires a callback to trigger when a chromecast is found');   
@@ -81,7 +83,8 @@ function ChromecastManager(){
     /**
      * Triggered when browser ready to start searching
      * @function - starts mdns browser searching
-     * @memberof findChromecasts
+     * @memberof ChromecastManager
+     * @private
      */
     function find(){
         browser.discover();   
@@ -90,7 +93,7 @@ function ChromecastManager(){
     /**
      * Triggered when service found by mdns browser
      * @function
-     * @memberof findChromecasts
+     * @memberof ChromecastManager
      * @param {Object} data - mdns network object 
      * @private
      */
@@ -104,12 +107,6 @@ function ChromecastManager(){
         this.foundCallback(chromecast);
     }
     
-    /**
-     * Stops looking for chromecasts
-     * @function
-     * @memberof ChromecastManager
-     * @public 
-     */
     function stopFindingChromecasts(){
         browser.stop();
     }
@@ -117,41 +114,60 @@ function ChromecastManager(){
 
 /**
  * Class for Chromecast objects
- * @class Chromecast
+ * @constructs Chromecast
  * @param   {Object}   data   network information
  * @returns {EventEmitter} chromecast object
  */
 function Chromecast(data) {
+    
     var chromecast = new EventEmitter();
     
-    //initialize object - for code completion in many IDEs
-    /** chromecast name @type {string} */
-    chromecast.name='';
-    /** chromecast session id if connected @type {string} */
-    chromecast.session='';
-    /** chromecast status object @type {object} */
-    chromecast.status={
-        /** @function request status from chromecast */
-        get:getStatus
-    };
-    /** chromecast ip @type {string} */
-    chromecast.ip='';
     
-    // set writeable and non writable chromecast values
     Object.defineProperties(
         chromecast,
         {
+            /** 
+             * chromecast name 
+             * @type {string} 
+             * @memberof Chromecast
+             * @public
+             */
             name : {
                 value:data.txt[4].replace('fn=','')
             },
+            /** 
+             * chromecast status object 
+             * @type {object}
+             * @memberof Chromecast
+             * @public
+             */
             session:{
                 value:'',
                 writable:true
             },
+            /** 
+             * chromecast status object 
+             * @type {object}
+             * @memberof Chromecast
+             * @public
+             */
             status:{
-                value:{},
+                value:{
+                    /**
+                     * Request the chromecast status
+                     * @memberof Chromecast.status
+                     * @public
+                     */
+                    get:getStatus 
+                },
                 writable:true
             },
+            /** 
+             * chromecast ip
+             * @memberof Chromecast
+             * @type {string}
+             * @public
+             */
             ip:{
                 value:data.addresses[0]
             },
@@ -163,16 +179,6 @@ function Chromecast(data) {
             },
             _register:{
                 value:register   
-            }
-        }
-    );
-    
-    // set writeable and non writable chromecast.status values
-    Object.defineProperties(
-        chromecast.status,
-        {
-            get:{
-                value:getStatus 
             }
         }
     );
@@ -198,10 +204,6 @@ function Chromecast(data) {
         );
     }
     
-    /**
-     * Request the chromecasts status
-     * @public
-     */
     function getStatus(){
         chromecast._client.receiver.getStatus(gotStatus);
     }
@@ -246,4 +248,8 @@ function Chromecast(data) {
     return chromecast;
 }
 
+/**
+ * nwjs-cast chromecast implementation for node-webkit and node.js
+ * @module nwjs/cast
+ */
 module.exports=ChromecastManager;

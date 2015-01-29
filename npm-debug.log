@@ -1,0 +1,103 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'jsdoc-to-markdown@next' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'jsdoc-to-markdown@next', null ]
+6 verbose cache add name=undefined spec="jsdoc-to-markdown@next" args=["jsdoc-to-markdown@next",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'jsdoc-to-markdown@next',
+7 verbose parsed url   path: 'jsdoc-to-markdown@next',
+7 verbose parsed url   href: 'jsdoc-to-markdown@next' }
+8 verbose cache add name="jsdoc-to-markdown" spec="next" args=["jsdoc-to-markdown","next"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'next',
+9 verbose parsed url   path: 'next',
+9 verbose parsed url   href: 'next' }
+10 verbose addNamed [ 'jsdoc-to-markdown', 'next' ]
+11 verbose addNamed [ null, null ]
+12 silly lockFile b248e1c6-jsdoc-to-markdown-next jsdoc-to-markdown@next
+13 verbose lock jsdoc-to-markdown@next /home/bmiller/.npm/b248e1c6-jsdoc-to-markdown-next.lock
+14 info addNameTag [ 'jsdoc-to-markdown', 'next' ]
+15 verbose request where is /jsdoc-to-markdown
+16 verbose request registry https://registry.npmjs.org/
+17 verbose request id 4350dcfe85697147
+18 verbose url raw /jsdoc-to-markdown
+19 verbose url resolving [ 'https://registry.npmjs.org/', './jsdoc-to-markdown' ]
+20 verbose url resolved https://registry.npmjs.org/jsdoc-to-markdown
+21 verbose request where is https://registry.npmjs.org/jsdoc-to-markdown
+22 info trying registry request attempt 1 at 03:53:58
+23 verbose etag "3ZBBJV5YUSCMYFP4IHMIIR42T"
+24 http GET https://registry.npmjs.org/jsdoc-to-markdown
+25 http 304 https://registry.npmjs.org/jsdoc-to-markdown
+26 silly registry.get cb [ 304,
+26 silly registry.get   { date: 'Thu, 29 Jan 2015 11:53:58 GMT',
+26 silly registry.get     server: 'Apache',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     'last-modified': 'Thu, 29 Jan 2015 11:53:58 GMT',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     etag: '"3ZBBJV5YUSCMYFP4IHMIIR42T"',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-lax1424-LAX',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1422532438.602577,VS0,VE214',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'content-length': '0',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 verbose etag https://registry.npmjs.org/jsdoc-to-markdown from cache
+28 verbose addNamed [ 'jsdoc-to-markdown', '0.6.3' ]
+29 verbose addNamed [ '0.6.3', '0.6.3' ]
+30 silly lockFile f4fcce56-jsdoc-to-markdown-0-6-3 jsdoc-to-markdown@0.6.3
+31 verbose lock jsdoc-to-markdown@0.6.3 /home/bmiller/.npm/f4fcce56-jsdoc-to-markdown-0-6-3.lock
+32 silly lockFile 6466bcb6-down-jsdoc-to-markdown-0-6-3-tgz https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz
+33 verbose lock https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz /home/bmiller/.npm/6466bcb6-down-jsdoc-to-markdown-0-6-3-tgz.lock
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz',
+34 verbose addRemoteTarball   '51407c902f5fd7de364ee71d4f98c7ad7d0f6d30' ]
+35 info retry fetch attempt 1 at 03:53:58
+36 verbose fetch to= /tmp/npm-17700-94x9MPhk/registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz
+37 http GET https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz
+38 http 200 https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz
+39 silly lockFile 6466bcb6-down-jsdoc-to-markdown-0-6-3-tgz https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz
+40 silly lockFile 6466bcb6-down-jsdoc-to-markdown-0-6-3-tgz https://registry.npmjs.org/jsdoc-to-markdown/-/jsdoc-to-markdown-0.6.3.tgz
+41 silly lockFile f4fcce56-jsdoc-to-markdown-0-6-3 jsdoc-to-markdown@0.6.3
+42 silly lockFile f4fcce56-jsdoc-to-markdown-0-6-3 jsdoc-to-markdown@0.6.3
+43 silly lockFile b248e1c6-jsdoc-to-markdown-next jsdoc-to-markdown@next
+44 silly lockFile b248e1c6-jsdoc-to-markdown-next jsdoc-to-markdown@next
+45 error Error: EACCES, mkdir '/home/bmiller/.npm/jsdoc-to-markdown/0.6.3'
+45 error  { [Error: EACCES, mkdir '/home/bmiller/.npm/jsdoc-to-markdown/0.6.3']
+45 error   errno: 3,
+45 error   code: 'EACCES',
+45 error   path: '/home/bmiller/.npm/jsdoc-to-markdown/0.6.3' }
+46 error Please try running this command again as root/Administrator.
+47 error System Linux 3.13.0-44-generic
+48 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "jsdoc-to-markdown@next"
+49 error cwd /home/bmiller/git/nwjs-cast
+50 error node -v v0.10.33
+51 error npm -v 1.4.28
+52 error path /home/bmiller/.npm/jsdoc-to-markdown/0.6.3
+53 error code EACCES
+54 error errno 3
+55 error stack Error: EACCES, mkdir '/home/bmiller/.npm/jsdoc-to-markdown/0.6.3'
+56 verbose exit [ 3, true ]
