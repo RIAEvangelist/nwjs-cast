@@ -1,6 +1,6 @@
 {
   "name": "nwjs-cast",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "chromecast integration for node, nw.js and node-webkit. Find and interact with all available chromecasts on the network.",
   "main": "nwjs-cast.js",
   "scripts": {
